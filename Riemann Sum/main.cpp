@@ -11,6 +11,7 @@
 #include <string>
 #include "polynomial.hpp"
 #include "prompt.hpp"
+#include "scanner.hpp"
 
 std::vector<long double> variableContainer;
 std::vector<long double> multipleContainer;
@@ -21,21 +22,21 @@ int main(int argc, const char * argv[]) {
    
     
     int runNum;
-   
+
     std::cout << "How many terms does your polynomial have?:" << std::endl;
     std::cin >> runNum;
-    
-    
+
+
     promptRun(runNum);
-    
+
 
     polyLoad(runNum);
-    
-    
+
+
     long double answer = polySum(runNum);
-    
+
     std::cout << answer << std::endl;
-    
+
     for (int i = 0; i < polynomialVector.size(); i++)
     {
         delete polynomialVector[i];

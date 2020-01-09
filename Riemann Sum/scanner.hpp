@@ -8,6 +8,12 @@
 
 #pragma once
 
-#include <stdio.h>
+#include <iostream>
+
+namespace mw
+{
 
 
+void scanner ();
+
+}

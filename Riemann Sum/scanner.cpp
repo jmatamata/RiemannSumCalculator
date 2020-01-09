@@ -7,3 +7,14 @@
 //
 
 #include "scanner.hpp"
+
+
+void scanner ()
+{
+    std::string input;
+    
+    std::cout << "Enter the equation you want to find the Riemann sum of: " << std::endl;
+    std::getline(std::cin, input);
+    
+    
+}
