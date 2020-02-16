@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A312E4023C7976B00E2DB3F /* scanner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A312E3E23C7976B00E2DB3F /* scanner.cpp */; };
 		2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C02238D0EFE00C2ACF4 /* main.cpp */; };
 		2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C0A238D180C00C2ACF4 /* polynomial.cpp */; };
+		2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D95023F8CD9800D36A65 /* functionReader.cpp */; };
 		2ADF0F85238E5E20002FCC6E /* prompt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF0F83238E5E20002FCC6E /* prompt.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,12 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A312E3E23C7976B00E2DB3F /* scanner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = scanner.cpp; sourceTree = "<group>"; };
-		2A312E3F23C7976B00E2DB3F /* scanner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scanner.hpp; sourceTree = "<group>"; };
 		2A864BFF238D0EFE00C2ACF4 /* Riemann Sum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Riemann Sum"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A864C02238D0EFE00C2ACF4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2A864C0A238D180C00C2ACF4 /* polynomial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = polynomial.cpp; sourceTree = "<group>"; };
 		2A864C0B238D180C00C2ACF4 /* polynomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polynomial.hpp; sourceTree = "<group>"; };
+		2AA6D95023F8CD9800D36A65 /* functionReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functionReader.cpp; sourceTree = "<group>"; };
+		2AA6D95123F8CD9800D36A65 /* functionReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functionReader.hpp; sourceTree = "<group>"; };
 		2ADF0F83238E5E20002FCC6E /* prompt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prompt.cpp; sourceTree = "<group>"; };
 		2ADF0F84238E5E20002FCC6E /* prompt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = prompt.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,10 +67,10 @@
 			isa = PBXGroup;
 			children = (
 				2A864C02238D0EFE00C2ACF4 /* main.cpp */,
+				2AA6D95023F8CD9800D36A65 /* functionReader.cpp */,
+				2AA6D95123F8CD9800D36A65 /* functionReader.hpp */,
 				2A864C0A238D180C00C2ACF4 /* polynomial.cpp */,
 				2A864C0B238D180C00C2ACF4 /* polynomial.hpp */,
-				2A312E3E23C7976B00E2DB3F /* scanner.cpp */,
-				2A312E3F23C7976B00E2DB3F /* scanner.hpp */,
 				2ADF0F83238E5E20002FCC6E /* prompt.cpp */,
 				2ADF0F84238E5E20002FCC6E /* prompt.hpp */,
 			);
@@ -134,9 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */,
 				2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */,
 				2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */,
-				2A312E4023C7976B00E2DB3F /* scanner.cpp in Sources */,
 				2ADF0F85238E5E20002FCC6E /* prompt.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

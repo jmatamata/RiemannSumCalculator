@@ -11,7 +11,6 @@
 #include <string>
 #include "polynomial.hpp"
 #include "prompt.hpp"
-#include "scanner.hpp"
 
 std::vector<long double> variableContainer;
 std::vector<long double> multipleContainer;
