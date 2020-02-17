@@ -17,26 +17,30 @@ std::vector<long double> multipleContainer;
 std::vector<int> powerContainer;
 std::vector<polynomial*> polynomialVector;
 
+
 int main(int argc, const char * argv[]) {
    
     
-    int runNum;
+//    int runNum;
+//
+//    std::cout << "How many terms does your polynomial have?:" << std::endl;
+//    std::cin >> runNum;
+//
+//    promptRun(runNum);
+//
+//    polyLoad(runNum);
+//
+//    long double answer = polySum(runNum);
+//
+//    std::cout << answer << std::endl;
+//
+//    polyDestroy(polynomialVector);
 
-    std::cout << "How many terms does your polynomial have?:" << std::endl;
-    std::cin >> runNum;
 
 
-    promptRun(runNum);
+    return 0;
+}
 
-
-    polyLoad(runNum);
-
-
-    long double answer = polySum(runNum);
-
-    std::cout << answer << std::endl;
-
-    polyDestroy(polynomialVector);
 
 /*
     At 1:50a I decided a method for aproaching this. I thought it would be a magnificant idea to push the multiple/variable/power
@@ -45,5 +49,3 @@ int main(int argc, const char * argv[]) {
     coresponding vectors. I also had a great idea to manage the amount of bits the user's int would be, the last thing we need
     is for some retard to make 2000 objects lmao. We will also need to overload the operators to be able to add the terms together.
 */
-    return 0;
-}
