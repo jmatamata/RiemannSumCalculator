@@ -6,9 +6,8 @@
 //  Copyright © 2020 Mata Works. All rights reserved.
 //
 
-#ifndef functionReader_hpp
-#define functionReader_hpp
+#pragma once
 
-#include <stdio.h>
+#include <iostream>
 
-#endif /* functionReader_hpp */
+

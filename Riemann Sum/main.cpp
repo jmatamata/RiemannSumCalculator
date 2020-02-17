@@ -36,12 +36,7 @@ int main(int argc, const char * argv[]) {
 
     std::cout << answer << std::endl;
 
-    for (int i = 0; i < polynomialVector.size(); i++)
-    {
-        delete polynomialVector[i];
-        std::cout << "poly destroyed" << std::endl;
-    }
-   
+    polyDestroy(polynomialVector);
 
 /*
     At 1:50a I decided a method for aproaching this. I thought it would be a magnificant idea to push the multiple/variable/power

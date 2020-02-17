@@ -115,3 +115,11 @@ long double polySum ( const int& run )
     return sum;
 }
 
+void polyDestroy ( std::vector<polynomial*>& pv )
+{
+    for (int i = 0; i < pv.size(); i++)
+    {
+        delete pv[i];
+        std::cout << "poly destroyed" << std::endl;
+    }
+}

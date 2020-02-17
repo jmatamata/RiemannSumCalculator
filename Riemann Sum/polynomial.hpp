@@ -33,3 +33,5 @@ long double operator + (const polynomial& lhs, const polynomial& rhs);
 void polyLoad ( const int& run );
 
 long double polySum ( const int& run );
+
+void polyDestroy ( std::vector<polynomial*>& pv );
