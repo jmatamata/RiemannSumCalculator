@@ -11,12 +11,14 @@
 #include <string>
 #include "polynomial.hpp"
 #include "prompt.hpp"
+#include "functionReader.hpp"
 
 std::vector<long double> variableContainer;
 std::vector<long double> multipleContainer;
 std::vector<int> powerContainer;
 std::vector<polynomial*> polynomialVector;
 
+std::vector<long double> function;
 
 int main(int argc, const char * argv[]) {
    
@@ -36,7 +38,9 @@ int main(int argc, const char * argv[]) {
 //
 //    polyDestroy(polynomialVector);
 
-
+    functionReader usrIn;
+    
+    usrIn.reader();
 
     return 0;
 }

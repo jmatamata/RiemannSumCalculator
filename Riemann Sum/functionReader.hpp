@@ -10,4 +10,11 @@
 
 #include <iostream>
 
-
+class functionReader
+{
+   char functionBuffer[40];
+    
+public:
+    void reader ();
+        
+};
