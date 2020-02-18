@@ -27,21 +27,6 @@ void functionReader::reader ()
             {
                 
             }
-                
-        else if ( functionBuffer[i] == '*' )
-            {
-                
-            }
-            
-        else if ( functionBuffer[i] == '+' )
-            {
-                
-            }
-            
-        else if ( functionBuffer[i] == '-' )
-            {
-                
-            }
             
         else if ( functionBuffer[i] == 'x' )
             {
