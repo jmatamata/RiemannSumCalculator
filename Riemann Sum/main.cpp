@@ -18,7 +18,6 @@ std::vector<long double> multipleContainer;
 std::vector<int> powerContainer;
 std::vector<polynomial*> polynomialVector;
 
-std::vector<long double> function;
 
 int main(int argc, const char * argv[]) {
    

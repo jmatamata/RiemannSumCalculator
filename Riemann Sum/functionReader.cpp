@@ -9,41 +9,54 @@
 #include <vector>
 #include "functionReader.hpp"
 
-extern std::vector<long double> function;
+
 
 void functionReader::reader ()
 {
     
-    std::cout <<  "Enter your function in terms of x below (don't use spaces):" << std::endl;
+    std::cout <<  "Enter your function in terms of x below:" << std::endl;
     
     std::cin.getline(functionBuffer, 40);
     
     for ( int i = 0; i < 40; i++)
     {
-        switch (i) {
-            case '^':
-                std::cout << "Exponent" << std::endl;
-                break;
+        
+        if ( functionBuffer[i] == '^' )
+            {
                 
-            case '*':
-                std::cout << "Multiplication" << std::endl;
-                break;
+            }
                 
-            case '+':
-                std::cout << "Addition" << std::endl;
-                break;
+        else if ( functionBuffer[i] == '*' )
+            {
                 
-            case '-':
-                std::cout << "Subtraction" << std::endl;
-                break;
+            }
+            
+        else if ( functionBuffer[i] == '+' )
+            {
                 
-            case 'x':
-                std::cout << "Variable" << std::endl;
-                break;
+            }
+            
+        else if ( functionBuffer[i] == '-' )
+            {
                 
-            default:
-                break;
-        }
+            }
+            
+        else if ( functionBuffer[i] == 'x' )
+            {
+                for ( int j = i - 1; 0 <= j; j-- )
+                {
+                    if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
+                        {
+                            break;
+                        }
+                    else
+                        {
+                        std::cout << functionBuffer[j] << std::endl;
+                        }
+                }
+
+            }
+                
     }
     
     std::wcout << functionBuffer << std::endl;
