@@ -56,7 +56,7 @@ long double functionReader::multipleFunctionCatcher ( int head )
     std::vector<char> temp;
     for ( int j = head - 1; 0 <= j; j-- )
     {
-        if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.') )
+        if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.' || functionBuffer[j] == '-') )
             {
                 break;
             }
