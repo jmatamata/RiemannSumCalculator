@@ -25,7 +25,7 @@ void functionReader::reader ()
         
         if ( functionBuffer[i] == '^' )
             {
-                
+                std::cout << this->powerFunctionCatcher(i) << std::endl;
             }
             
         else if ( functionBuffer[i] == 'x' )
@@ -35,6 +35,8 @@ void functionReader::reader ()
                 
     }
 }
+
+
 
 long double functionReader::multipleFunctionCatcher ( int head )
 {
@@ -60,6 +62,36 @@ long double functionReader::multipleFunctionCatcher ( int head )
     return number;
 }
 
+
+
+int functionReader::powerFunctionCatcher ( int head )
+{
+        std::vector<char> temp;
+        for ( int j = head + 1; j <= 39; j++ )
+        {
+            if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
+                {
+                    break;
+                }
+            else
+                {
+                    temp.push_back(functionBuffer[j]);
+                }
+        }
+        
+        std::reverse(temp.begin(), temp.end());
+        
+        std::string sNumber (temp.begin(), temp.end());
+        
+        int number = std::stoi(sNumber);
+        
+        return number;
+}
+
+
+
+
+
 //This is the old algorithm I put in the else if statement in the reader function.
 //                std::vector<char> temp;
 //                for ( int j = i - 1; 0 <= j; j-- )
@@ -81,3 +113,26 @@ long double functionReader::multipleFunctionCatcher ( int head )
 //                long double number = std::stold(sNumber);
 //
 //                std::cout << number << std::endl;
+
+
+//This is the old algorithm I put in the else if statement in the reader function.
+//std::vector<char> temp;
+//for ( int j = i + 1; j <= 39; j++ )
+//{
+//    if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
+//        {
+//            break;
+//        }
+//    else
+//        {
+//            temp.push_back(functionBuffer[j]);
+//        }
+//}
+//
+//std::reverse(temp.begin(), temp.end());
+//
+//std::string sNumber (temp.begin(), temp.end());
+//
+//int number = std::stoi(sNumber);
+//
+//std::cout << number << std::endl;
