@@ -8,8 +8,6 @@
 
 #pragma once
 
-#include <iostream>
-
 class functionReader
 {
    char functionBuffer[40];

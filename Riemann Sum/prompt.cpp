@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "prompt.hpp"
 
 extern std::vector<long double> variableContainer;    //This is a vector that is located in main.cpp but will be utilized during compile.

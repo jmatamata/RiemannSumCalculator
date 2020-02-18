@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
 #include "polynomial.hpp"
 #include "prompt.hpp"
 #include "functionReader.hpp"

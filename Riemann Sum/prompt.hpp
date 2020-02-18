@@ -7,7 +7,5 @@
 //
 
 #pragma once
-#include "polynomial.hpp"
-#include <vector>
 
 void promptRun (const int& run);    //This is the function signature for promptRun
