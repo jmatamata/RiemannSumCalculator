@@ -7,6 +7,7 @@
 //
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "functionReader.hpp"
 
 
@@ -43,6 +44,7 @@ void functionReader::reader ()
             
         else if ( functionBuffer[i] == 'x' )
             {
+                std::vector<char> temp;
                 for ( int j = i - 1; 0 <= j; j-- )
                 {
                     if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
@@ -51,14 +53,23 @@ void functionReader::reader ()
                         }
                     else
                         {
-                        std::cout << functionBuffer[j] << std::endl;
+                            std::cout << functionBuffer[j];
+                            temp.push_back(functionBuffer[j]);
                         }
                 }
+                
+                std::cout << '\n';
+                    
+                std::reverse(temp.begin(), temp.end());
+                    
+                    for (std::vector<char>::const_iterator it = temp.begin(); it != temp.end(); ++it)
+                    {
+                        std::cout << *it;
+                    }
+                    std::cout << '\n';
 
             }
                 
     }
-    
-    std::wcout << functionBuffer << std::endl;
 }
 
