@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 #include "functionReader.hpp"
 
 
@@ -47,27 +48,23 @@ void functionReader::reader ()
                 std::vector<char> temp;
                 for ( int j = i - 1; 0 <= j; j-- )
                 {
-                    if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
+                    if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.') )
                         {
                             break;
                         }
                     else
                         {
-                            std::cout << functionBuffer[j];
                             temp.push_back(functionBuffer[j]);
                         }
                 }
                 
-                std::cout << '\n';
-                    
                 std::reverse(temp.begin(), temp.end());
-                    
-                    for (std::vector<char>::const_iterator it = temp.begin(); it != temp.end(); ++it)
-                    {
-                        std::cout << *it;
-                    }
-                    std::cout << '\n';
-
+                
+                std::string sNumber (temp.begin(), temp.end());
+                
+                long double number = std::stold(sNumber);
+                
+                std::cout << number << std::endl;
             }
                 
     }
