@@ -45,28 +45,54 @@ void functionReader::reader ()
             
         else if ( functionBuffer[i] == 'x' )
             {
-                std::vector<char> temp;
-                for ( int j = i - 1; 0 <= j; j-- )
-                {
-                    if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.') )
-                        {
-                            break;
-                        }
-                    else
-                        {
-                            temp.push_back(functionBuffer[j]);
-                        }
-                }
-                
-                std::reverse(temp.begin(), temp.end());
-                
-                std::string sNumber (temp.begin(), temp.end());
-                
-                long double number = std::stold(sNumber);
-                
-                std::cout << number << std::endl;
+                std::cout << this->multipleFunctionCatcher(i) << std::endl;
             }
                 
     }
 }
 
+long double functionReader::multipleFunctionCatcher ( int head )
+{
+    std::vector<char> temp;
+    for ( int j = head - 1; 0 <= j; j-- )
+    {
+        if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.') )
+            {
+                break;
+            }
+        else
+            {
+                temp.push_back(functionBuffer[j]);
+            }
+    }
+    
+    std::reverse(temp.begin(), temp.end());
+    
+    std::string sNumber (temp.begin(), temp.end());
+    
+    long double number = std::stold(sNumber);
+    
+    return number;
+}
+
+//This is the old algorithm I put in the else if statement in the reader function.
+//                std::vector<char> temp;
+//                for ( int j = i - 1; 0 <= j; j-- )
+//                {
+//                    if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.') )
+//                        {
+//                            break;
+//                        }
+//                    else
+//                        {
+//                            temp.push_back(functionBuffer[j]);
+//                        }
+//                }
+//
+//                std::reverse(temp.begin(), temp.end());
+//
+//                std::string sNumber (temp.begin(), temp.end());
+//
+//                long double number = std::stold(sNumber);
+//
+//                std::cout << number << std::endl;

@@ -14,5 +14,6 @@ class functionReader
     
 public:
     void reader ();
-        
+    
+    long double multipleFunctionCatcher ( int head );
 };
