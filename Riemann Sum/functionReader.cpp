@@ -20,6 +20,7 @@ void functionReader::reader ()
     
     std::cin.getline(functionBuffer, 40);
     
+    
     for ( int i = 0; i < 40; i++)
     {
         
@@ -34,6 +35,8 @@ void functionReader::reader ()
             }
                 
     }
+    
+    std::cout << this->constantFunctionCatcher() << std::endl;
 }
 
 
@@ -87,6 +90,72 @@ int functionReader::powerFunctionCatcher ( int head )
         
         return number;
 }
+
+
+
+bool functionReader::constantChecker ()
+{
+    bool constantCondition = false;
+    for ( int j = 40; 0 <= j; j-- )
+    {
+        if ( functionBuffer[j] == ' ' )
+        {
+            continue;
+        }
+        else if (( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9'))
+        {
+            continue;
+        }
+        else if ( functionBuffer[j] == '+' )
+        {
+            constantCondition = true;
+            break;
+        }
+        else
+            {
+                break;
+            }
+    }
+    return constantCondition;
+}
+
+
+
+long double functionReader::constantFunctionCatcher ()
+{
+    long double number = 0;
+    
+    if (this->constantChecker())
+    {
+        std::vector<char> temp;
+        for ( int j = 40; 0 <= j; j-- )
+        {
+            if ( functionBuffer[j] == ' ' )
+                {
+                    continue;
+                }
+            
+            else if ( ( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9') )
+                {
+                    temp.push_back(functionBuffer[j]);
+                }
+            
+            else
+                {
+                    continue;
+                }
+        }
+        
+        std::reverse(temp.begin(), temp.end());
+        
+        std::string sNumber (temp.begin(), temp.end());
+        
+        number = std::stold(sNumber);
+    }
+    
+    return number;
+}
+
 
 
 

@@ -30,6 +30,9 @@ int main(int argc, const char * argv[])
 }
 
 
+
+
+
 /*
     At 1:50a I decided a method for aproaching this. I thought it would be a magnificant idea to push the multiple/variable/power
     user variables into vectors to be called later to be used as polynomial parameters. The main would run a loop to dependeing on
