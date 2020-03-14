@@ -21,17 +21,17 @@ void functionReader::reader ()
     std::cin.getline(functionBuffer, 40);
     
     
-    for ( int i = 0; i < 40; i++)
+    for ( char* index = functionBuffer; index != bufferEnd; index++)
     {
         
-        if ( functionBuffer[i] == '^' )
+        if ( *index == '^' )
             {
-                std::cout << this->powerFunctionCatcher(i) << std::endl;
+                std::cout << this->powerFunctionCatcher(index) << std::endl;
             }
             
-        else if ( functionBuffer[i] == 'x' )
+        else if ( (*index == 'x' || *index == 'X' ) )
             {
-                std::cout << this->multipleFunctionCatcher(i) << std::endl;
+                std::cout << this->multipleFunctionCatcher(index) << std::endl;
             }
                 
     }
@@ -41,52 +41,53 @@ void functionReader::reader ()
 
 
 
-long double functionReader::multipleFunctionCatcher ( int head )
+long double functionReader::multipleFunctionCatcher ( char* index )
 {
     std::vector<char> temp;
-    for ( int j = head - 1; 0 <= j; j-- )
+    
+    for ( char* multiplePointer = index - 1; multiplePointer != bufferStart; --multiplePointer )
     {
-        if ( !((( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) || functionBuffer [j] == '.' || functionBuffer[j] == '-') )
+        if ( !((( '1' <= *multiplePointer) && (*multiplePointer <= '9')) || *multiplePointer == '.' || *multiplePointer == '-') )
             {
                 break;
             }
         else
             {
-                temp.push_back(functionBuffer[j]);
+                temp.push_back(*multiplePointer);
             }
     }
     
     std::reverse(temp.begin(), temp.end());
     
-    std::string sNumber (temp.begin(), temp.end());
+    std::string stringNumber (temp.begin(), temp.end());
     
-    long double number = std::stold(sNumber);
+    long double number = std::stold(stringNumber);
     
     return number;
 }
 
 
 
-int functionReader::powerFunctionCatcher ( int head )
+int functionReader::powerFunctionCatcher ( char* index )
 {
         std::vector<char> temp;
-        for ( int j = head + 1; j <= 39; j++ )
+        for ( char* powerPointer = index; powerPointer != bufferEnd; powerPointer++ )
         {
-            if ( !(( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9')) )
+            if ( !(( '1' <= *powerPointer) && (*powerPointer <= '9')) )
                 {
                     break;
                 }
             else
                 {
-                    temp.push_back(functionBuffer[j]);
+                    temp.push_back(*powerPointer);
                 }
         }
         
         std::reverse(temp.begin(), temp.end());
         
-        std::string sNumber (temp.begin(), temp.end());
+        std::string stringNumber (temp.begin(), temp.end());
         
-        int number = std::stoi(sNumber);
+        int number = std::stoi(stringNumber);
         
         return number;
 }
@@ -96,25 +97,23 @@ int functionReader::powerFunctionCatcher ( int head )
 bool functionReader::constantChecker ()
 {
     bool constantCondition = false;
-    for ( int j = 40; 0 <= j; j-- )
+    
+    for ( char* index = functionBuffer + 40; index != bufferStart; --index )
     {
-        if ( functionBuffer[j] == ' ' )
+        if ( *index == ' ' || ( ( '1' <= *index) && (*index <= '9') ) )
         {
             continue;
         }
-        else if (( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9'))
+        else if ( *index == '^' || (*index == 'x' || *index == 'X' ))
         {
-            continue;
+            break;
         }
-        else if ( functionBuffer[j] == '+' )
+        else if ( *index == '+' )
         {
             constantCondition = true;
             break;
         }
-        else
-            {
-                break;
-            }
+        
     }
     return constantCondition;
 }
@@ -128,21 +127,21 @@ long double functionReader::constantFunctionCatcher ()
     if (this->constantChecker())
     {
         std::vector<char> temp;
-        for ( int j = 40; 0 <= j; j-- )
+        for ( char* index = functionBuffer + 40; index != bufferStart; --index )
         {
-            if ( functionBuffer[j] == ' ' )
+            if ( *index == ' ' )
                 {
                     continue;
                 }
             
-            else if ( ( '1' <= functionBuffer[j]) && (functionBuffer[j] <= '9') )
+            else if ( ( '1' <= *index) && (*index <= '9') )
                 {
-                    temp.push_back(functionBuffer[j]);
+                    temp.push_back(*index);
                 }
             
             else
                 {
-                    continue;
+                    break;
                 }
         }
         
