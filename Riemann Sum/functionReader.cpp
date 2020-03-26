@@ -41,13 +41,15 @@ void functionReader::reader ()
 
 
 
+
+
 long double functionReader::multipleFunctionCatcher ( char* index )
 {
     std::vector<char> temp;
     
     for ( char* multiplePointer = index - 1; multiplePointer != bufferStart; --multiplePointer )
     {
-        if ( ('1' <= *multiplePointer && *multiplePointer <= '9') || *multiplePointer == '.' )
+        if ( ('1' <= *multiplePointer && *multiplePointer <= '9') || *multiplePointer == '.' || *multiplePointer == '-')
             {
                 temp.push_back(*multiplePointer);
             }
@@ -67,6 +69,8 @@ long double functionReader::multipleFunctionCatcher ( char* index )
     
     return number;
 }
+
+
 
 
 
@@ -100,33 +104,32 @@ int functionReader::powerFunctionCatcher ( char* index )
 
 
 
+
+
 bool functionReader::constantChecker ()
 {
-    bool constantCondition = false;
+    bool constCondition = false;
     
     for ( char* index = functionBuffer + 40; index != bufferStart; --index )
     {
-        if ( *index == ' ' || ('1' <= *index && *index <= '9') )
-        {
-            continue;
-        }
         
-        else if ( *index == '^' || (*index == 'x' || *index == 'X') )
-        {
-            break;
-        }
+        if ( *index == '+' )
+            {
+                constCondition = true;
+                break;
+            }
         
-        else if ( *index == '+' )
-        {
-            constantCondition = true;
-            break;
-        }
-        
-        
+        else if ( *index == '^' )
+            {
+                constCondition = false;
+                break;
+            }
     }
     
-    return constantCondition;
+    return constCondition;
 }
+
+
 
 
 
@@ -141,12 +144,12 @@ long double functionReader::constantFunctionCatcher ()
         for ( char* index = functionBuffer + 40; index != bufferStart; --index )
         {
             
-            if ( ('1' <= *index && *index <= '9') || *index == '.' )
+            if ( ('1' <= *index && *index <= '9') || *index == '.' || *index == '-')
                 {
                     temp.push_back(*index);
                 }
             
-            else
+            if ( *index == '+' )
                 {
                     break;
                 }
