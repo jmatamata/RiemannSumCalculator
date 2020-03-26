@@ -31,5 +31,6 @@ public:
     //This function catches the constant at the end of the user defined function.
     long double constantFunctionCatcher ();
     
+    //This checks to see if the constFunctionCatcher should be called or not.
     bool constantChecker ();
 };
