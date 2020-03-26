@@ -17,7 +17,7 @@ class functionReader
     const char* bufferEnd = functionBuffer + 40;
     
     //This is the first index of the function buffer array. This will be used to change the for loops to use pointers.
-    const char* bufferStart = functionBuffer;
+    const char* bufferStart = functionBuffer - 1;
     
 public:
     void reader ();

@@ -21,8 +21,9 @@ std::vector<polynomial*> polynomialVector;
 int main(int argc, const char * argv[])
 {
     functionReader usrIn;
-    
+
     usrIn.reader();
+    
 
     return 0;
     
