@@ -19,6 +19,9 @@ class functionReader
     //This is the first index of the function buffer array. This will be used to change the for loops to use pointers.
     const char* bufferStart = functionBuffer - 1;
     
+    //This is the value of variable terms in the function.
+    int variableTerms = 0;
+    
 public:
     void reader ();
     

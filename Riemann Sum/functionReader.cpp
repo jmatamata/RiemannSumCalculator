@@ -41,6 +41,7 @@ void functionReader::reader ()
         if ( (*index == 'x' || *index == 'X' ) )
             {
                 std::cout << this->multipleFunctionCatcher(index) << std::endl;
+                variableTerms++;
             }
                 
     }
