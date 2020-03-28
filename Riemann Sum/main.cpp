@@ -9,13 +9,7 @@
 #include <iostream>
 #include <vector>
 #include "polynomial.hpp"
-#include "prompt.hpp"
 #include "functionReader.hpp"
-
-std::vector<long double> variableContainer;
-std::vector<long double> multipleContainer;
-std::vector<int> powerContainer;
-std::vector<polynomial*> polynomialVector;
 
 
 int main(int argc, const char * argv[])

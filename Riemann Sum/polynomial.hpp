@@ -26,10 +26,12 @@ public:
     float getVariable () const; //This member function gets the variable of the polynomial
     void print () const;    //This member function prints the parts of the polynimial in power form
     long double value () const;
-    
-    static void polyLoad ( const int& run );
-    static long double polySum ( const int& run );
-    static void polyDestroy ( std::vector<polynomial*>& pv );
+
 };
 
 long double operator + (const polynomial& lhs, const polynomial& rhs);
+
+
+//static void polyLoad ( const int& run );
+//static long double polySum ( const int& run );
+//static void polyDestroy ( std::vector<polynomial*>& pv );

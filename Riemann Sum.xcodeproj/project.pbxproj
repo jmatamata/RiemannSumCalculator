@@ -10,7 +10,6 @@
 		2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C02238D0EFE00C2ACF4 /* main.cpp */; };
 		2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C0A238D180C00C2ACF4 /* polynomial.cpp */; };
 		2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D95023F8CD9800D36A65 /* functionReader.cpp */; };
-		2ADF0F85238E5E20002FCC6E /* prompt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2ADF0F83238E5E20002FCC6E /* prompt.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +31,6 @@
 		2A864C0B238D180C00C2ACF4 /* polynomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polynomial.hpp; sourceTree = "<group>"; };
 		2AA6D95023F8CD9800D36A65 /* functionReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functionReader.cpp; sourceTree = "<group>"; };
 		2AA6D95123F8CD9800D36A65 /* functionReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functionReader.hpp; sourceTree = "<group>"; };
-		2ADF0F83238E5E20002FCC6E /* prompt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = prompt.cpp; sourceTree = "<group>"; };
-		2ADF0F84238E5E20002FCC6E /* prompt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = prompt.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +68,6 @@
 				2AA6D95123F8CD9800D36A65 /* functionReader.hpp */,
 				2A864C0A238D180C00C2ACF4 /* polynomial.cpp */,
 				2A864C0B238D180C00C2ACF4 /* polynomial.hpp */,
-				2ADF0F83238E5E20002FCC6E /* prompt.cpp */,
-				2ADF0F84238E5E20002FCC6E /* prompt.hpp */,
 			);
 			path = "Riemann Sum";
 			sourceTree = "<group>";
@@ -137,7 +132,6 @@
 				2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */,
 				2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */,
 				2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */,
-				2ADF0F85238E5E20002FCC6E /* prompt.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
