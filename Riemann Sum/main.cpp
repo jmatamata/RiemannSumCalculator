@@ -14,9 +14,9 @@
 
 int main(int argc, const char * argv[])
 {
-    functionReader usrIn;
+    functionReader userFunction;
 
-    usrIn.reader();
+    userFunction.reader();
     
 
     return 0;
