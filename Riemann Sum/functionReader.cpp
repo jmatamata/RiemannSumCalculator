@@ -34,6 +34,7 @@ void functionReader::reader ()
         if ( *index == '^' )
             {
                 std::cout << this->powerFunctionCatcher(index) << std::endl;
+                functionPowers.push_back(this->powerFunctionCatcher(index));
             }
         
         //This runs the multipleFunctionCatcher function if it sees the char x or X.
@@ -41,13 +42,16 @@ void functionReader::reader ()
         if ( (*index == 'x' || *index == 'X' ) )
             {
                 std::cout << this->multipleFunctionCatcher(index) << std::endl;
+                functionMultiples.push_back(this->multipleFunctionCatcher(index));
                 variableTerms++;
+                std::cout << "Terms: " << variableTerms << std::endl;
             }
                 
     }
     
     //This calls the constantFunctionCatcher function which retrieves the constants from the functions.
     std::cout << this->constantFunctionCatcher() << std::endl;
+    functionConstant = this->constantFunctionCatcher();
 }
 
 

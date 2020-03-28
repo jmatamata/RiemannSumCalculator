@@ -21,7 +21,7 @@ extern std::vector<int> powerContainer; //This is a vector that is located in ma
 extern std::vector<polynomial*> polynomialVector;
 
 //Member function that takes arguments (the multiple and power arguments are initialized in the function declaration)
-polynomial::polynomial( long double variable, int power, long double multiple ) : _variable(variable), _power(power), _multiple(multiple)
+polynomial::polynomial( long double multiple, long double variable, int power ) : _multiple(multiple), _variable(variable), _power(power)
 {
     std::cout << "object created" << std::endl;
 }
@@ -32,7 +32,7 @@ polynomial::~polynomial()
     std::cout << "object destroyed" << std::endl;
 }
 
-polynomial::polynomial ( const polynomial& p) : _variable(p._variable), _power(p._power), _multiple(p._multiple)
+polynomial::polynomial ( const polynomial& p) : _variable(p._variable), _multiple(p._multiple), _power(p._power)
 {
     std::cout << "COPY" << std::endl;
 }

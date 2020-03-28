@@ -15,7 +15,7 @@ class polynomial
     int _power;
 public:
     //polynomial();   //This is the defult constructor
-    polynomial( const long double variable = 0, const int power = 1, const long double multiple = 1 );   //This constructor creates the parts of the polynomial
+    polynomial( long double multiple = 0, long double variable = 0, int power = 1 );   //This constructor creates the parts of the polynomial
     ~polynomial();  //deconstructor
     polynomial ( const polynomial& ); //This is a copy constructor
     void setPower (const int& power);    //This member function sets the power of the polynomial

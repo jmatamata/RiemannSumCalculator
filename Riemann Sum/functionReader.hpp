@@ -22,6 +22,15 @@ class functionReader
     //This is the value of variable terms in the function.
     int variableTerms = 0;
     
+    //This vector stores all the multiples from the function.
+    std::vector<long double> functionMultiples;
+    
+    //This vector stores all the powers from the function.
+    std::vector<int> functionPowers;
+    
+    //This is the constant of the function.
+    long double functionConstant = 0;
+    
 public:
     void reader ();
     
