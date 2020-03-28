@@ -45,4 +45,7 @@ public:
     
     //This checks to see if the constFunctionCatcher should be called or not.
     bool constantChecker ();
+    
+    //This evaluates the function using an inputed variable.
+    long double function ( const long double& variable );
 };

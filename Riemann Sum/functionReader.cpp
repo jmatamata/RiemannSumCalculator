@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <string>
 #include "functionReader.hpp"
+#include "polynomial.hpp"
 
 
 //MAIN READER
@@ -209,3 +210,27 @@ long double functionReader::constantFunctionCatcher ()
     return number;
 }
 
+//FOR FUNCTION BUILDER
+//---------------------------------------------------------------------------------------------------------------
+
+long double functionReader::function ( const long double& variable )
+{
+    if ( functionMultiples.size() == functionPowers.size() == variableTerms)
+        {
+            long double functionEvaluation = 0;
+            
+            for ( int i = 0; i < variableTerms; i++)
+                {
+                    functionEvaluation += polynomial( functionMultiples[i], variable, functionPowers[i]).value();
+                }
+            
+            functionEvaluation += functionConstant;
+            
+            return functionEvaluation;
+        }
+    else
+        {
+            std::cout << "Function Evaluation Failed" << std::endl;
+            return -1;
+        }
+}

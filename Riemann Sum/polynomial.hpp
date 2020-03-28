@@ -13,6 +13,7 @@ class polynomial
     long double _variable;
     long double _multiple;
     int _power;
+    
 public:
     //polynomial();   //This is the defult constructor
     polynomial( long double multiple = 0, long double variable = 0, int power = 1 );   //This constructor creates the parts of the polynomial
