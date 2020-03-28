@@ -20,7 +20,9 @@
 void functionReader::reader ()
 {
     
-    std::cout <<  "Enter your function in terms of x below:" << std::endl;
+    std::cout <<  "Enter your function in terms of x below (40 Character Limit)" << std::endl;
+    std::cout <<  "(Write in Format Below)" << std::endl;
+    std::cout <<  "Ex: Ax^2 + Bx^1 + C" << std::endl;
     
     //Grabs the input of the user with a 40 character limit and stores it into functionBuffer.
     std::cin.getline(functionBuffer, 40);
@@ -45,7 +47,7 @@ void functionReader::reader ()
                 std::cout << this->multipleFunctionCatcher(index) << std::endl;
                 functionMultiples.push_back(this->multipleFunctionCatcher(index));
                 variableTerms++;
-                std::cout << "Terms: " << variableTerms << std::endl;
+                std::cout << "Term: " << variableTerms << std::endl;
             }
                 
     }
@@ -215,7 +217,7 @@ long double functionReader::constantFunctionCatcher ()
 
 long double functionReader::function ( const long double& variable )
 {
-    if ( functionMultiples.size() == functionPowers.size() == variableTerms)
+    if ( int(functionMultiples.size()) == variableTerms && int(functionPowers.size()) == variableTerms)
         {
             long double functionEvaluation = 0;
             
@@ -233,4 +235,13 @@ long double functionReader::function ( const long double& variable )
             std::cout << "Function Evaluation Failed" << std::endl;
             return -1;
         }
+}
+
+
+//FOR VARIABLE TERM GETTER
+//---------------------------------------------------------------------------------------------------------------
+
+int functionReader::getVariableTerms()
+{
+    return variableTerms;
 }

@@ -9,15 +9,21 @@
 #include <iostream>
 #include <vector>
 #include "polynomial.hpp"
+#include "calculator.hpp"
 #include "functionReader.hpp"
 
 
 int main(int argc, const char * argv[])
 {
     functionReader userFunction;
+    
+    summation userCalculation;
 
     userFunction.reader();
     
+    userCalculation.functionBase();
+    
+    std::cout << userCalculation.leftRiemannSum(userFunction) << std::endl;
 
     return 0;
     

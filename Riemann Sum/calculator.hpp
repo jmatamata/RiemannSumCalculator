@@ -7,5 +7,23 @@
 //
 
 #pragma once
+#include "functionReader.hpp"
 
 
+class summation
+{
+    
+    double _beginInterval;
+    
+    double _endInterval;
+    
+    int _nTerm;
+    
+    long double _base;
+    
+public:
+    
+    void functionBase ();
+    
+    long double leftRiemannSum (functionReader& userFunction);
+};

@@ -32,6 +32,7 @@ class functionReader
     long double functionConstant = 0;
     
 public:
+    
     void reader ();
     
     //This function catches all the multiples in the user inputted function. All numbers after 'x' symbol.
@@ -48,4 +49,6 @@ public:
     
     //This evaluates the function using an inputed variable.
     long double function ( const long double& variable );
+    
+    int getVariableTerms();
 };
