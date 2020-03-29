@@ -36,7 +36,7 @@ void functionReader::reader ()
         //Obtains the powers of the polynomials.
         if ( *index == '^' )
             {
-                std::cout << this->powerFunctionCatcher(index) << std::endl;
+                //std::cout << this->powerFunctionCatcher(index) << std::endl;
                 functionPowers.push_back(this->powerFunctionCatcher(index));
             }
         
@@ -44,16 +44,16 @@ void functionReader::reader ()
         //Obtains the multiples of the polynomials.
         if ( (*index == 'x' || *index == 'X' ) )
             {
-                std::cout << this->multipleFunctionCatcher(index) << std::endl;
+                //std::cout << this->multipleFunctionCatcher(index) << std::endl;
                 functionMultiples.push_back(this->multipleFunctionCatcher(index));
                 variableTerms++;
-                std::cout << "Term: " << variableTerms << std::endl;
+                //std::cout << "Term: " << variableTerms << std::endl;
             }
                 
     }
     
     //This calls the constantFunctionCatcher function which retrieves the constants from the functions.
-    std::cout << this->constantFunctionCatcher() << std::endl;
+    //std::cout << this->constantFunctionCatcher() << std::endl;
     functionConstant = this->constantFunctionCatcher();
 }
 
@@ -132,9 +132,10 @@ int functionReader::powerFunctionCatcher ( char* index )
         
         //This converts the string into an int.
         int number = std::stoi(stringNumber);
-        
+    
         //This returns the power number.
         return number;
+        
 }
 
 
@@ -245,3 +246,17 @@ int functionReader::getVariableTerms()
 {
     return variableTerms;
 }
+
+
+//if ( std::stoi(stringNumber) == int(std::stoi(stringNumber)))
+//    {
+//        //This converts the string into an int.
+//        int number = std::stoi(stringNumber);
+//
+//        //This returns the power number.
+//        return number;
+//    }
+//else
+//    {
+//        throw 1;
+//    }

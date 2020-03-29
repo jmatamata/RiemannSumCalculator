@@ -15,13 +15,13 @@
 //Member function that takes arguments (the multiple and power arguments are initialized in the function declaration)
 polynomial::polynomial( long double multiple, long double variable, int power ) : _multiple(multiple), _variable(variable), _power(power)
 {
-    std::cout << "object created" << std::endl;
+    //std::cout << "object created" << std::endl;
 }
 
 //Destructor
 polynomial::~polynomial()
 {
-    std::cout << "object destroyed" << std::endl;
+    //std::cout << "object destroyed" << std::endl;
 }
 
 polynomial::polynomial ( const polynomial& p) : _variable(p._variable), _multiple(p._multiple), _power(p._power)

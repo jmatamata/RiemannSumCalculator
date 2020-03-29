@@ -15,15 +15,24 @@
 
 int main(int argc, const char * argv[])
 {
-    functionReader userFunction;
-    
-    summation userCalculation;
+    try
+    {
+        functionReader userFunction;
+        
+        summation userCalculation;
 
-    userFunction.reader();
+        userFunction.reader();
+        
+        userCalculation.functionBase();
+        
+        std::cout << userCalculation.leftRiemannSum(userFunction) << std::endl;
+    }
     
-    userCalculation.functionBase();
-    
-    std::cout << userCalculation.leftRiemannSum(userFunction) << std::endl;
+    catch (...)
+    {
+        std::cout << "Error" << std::endl;
+        std::cout << "Try inputting the function again." << std::endl;
+    }
 
     return 0;
     

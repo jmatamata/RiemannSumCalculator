@@ -15,6 +15,8 @@
 
 void summation::functionBase ()
 {
+    std::cout << "\n";
+    
     std::cout <<  "Enter the beginging interval for your Riemann Sum: ";
     
     std::cin >> _beginInterval;
