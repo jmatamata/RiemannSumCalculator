@@ -26,7 +26,7 @@ class functionReader
     std::vector<long double> functionMultiples;
     
     //This vector stores all the powers from the function.
-    std::vector<int> functionPowers;
+    std::vector<long double> functionPowers;
     
     //This is the constant of the function.
     long double functionConstant = 0;
@@ -39,7 +39,7 @@ public:
     long double multipleFunctionCatcher ( char* index );
     
     //This function catches all the power numbers that are after the '^' symbol.
-    int powerFunctionCatcher ( char* index );
+    long double powerFunctionCatcher ( char* index );
     
     //This function catches the constant at the end of the user defined function.
     long double constantFunctionCatcher ();

@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <vector>
-#include "polynomial.hpp"
+#include <cmath>
 #include "calculator.hpp"
 #include "functionReader.hpp"
 
@@ -17,22 +17,25 @@ int main(int argc, const char * argv[])
 {
     try
     {
+
         functionReader userFunction;
-        
+
         summation userCalculation;
 
         userFunction.reader();
-        
+
         userCalculation.functionBase();
-        
-        std::cout << userCalculation.leftRiemannSum(userFunction) << std::endl;
+
+        userCalculation.sumChoice(userFunction);
+
     }
-    
+
     catch (...)
     {
         std::cout << "Error" << std::endl;
         std::cout << "Try inputting the function again." << std::endl;
     }
+
 
     return 0;
     

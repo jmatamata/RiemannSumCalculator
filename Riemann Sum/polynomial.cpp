@@ -13,7 +13,7 @@
 
 
 //Member function that takes arguments (the multiple and power arguments are initialized in the function declaration)
-polynomial::polynomial( long double multiple, long double variable, int power ) : _multiple(multiple), _variable(variable), _power(power)
+polynomial::polynomial( long double multiple, long double variable, long double power ) : _multiple(multiple), _variable(variable), _power(power)
 {
     //std::cout << "object created" << std::endl;
 }
@@ -30,7 +30,7 @@ polynomial::polynomial ( const polynomial& p) : _variable(p._variable), _multipl
 }
 
 //Sets power of polynomial
-void polynomial::setPower ( const int& power)
+void polynomial::setPower ( const long double& power)
 {
     _power = power;
 }
@@ -48,19 +48,19 @@ void polynomial::setVariable ( const long double& variable )
 }
 
 //Gets power of polynomial
-int polynomial::getPower () const
+long double polynomial::getPower () const
 {
     return _power;
 }
 
 //Gets multiple of polynomial
-float polynomial::getMultiple () const
+long double polynomial::getMultiple () const
 {
     return _multiple;
 }
 
 //Gets variable of polynomial
-float polynomial::getVariable () const
+long double polynomial::getVariable () const
 {
     return _variable;
 }
@@ -84,42 +84,3 @@ long double operator + (const polynomial& lhs, const polynomial& rhs)
     return value;
 }
 
-
-
-
-
-
-
-
-
-
-// This puts the parts of the polynomial into a vector located in the heap (DONT FORGET TO DEALLOCATE)
-//void polyLoad ( const int& run )
-//{
-//    for (int i = 0; i < run; i++)
-//    {
-//        polynomial* polynomialPart = new polynomial(variableContainer.at(i), powerContainer.at(i), multipleContainer.at(i));
-//        polynomialVector.push_back(polynomialPart);
-//    }
-//}
-//
-//
-// This function adds up the polynomial parts and evaluates a polynomial
-//long double polySum ( const int& run )
-//{
-//    long double sum = 0;
-//    for(int i = 0; i < polynomialVector.size(); i++)
-//    {
-//        sum += polynomialVector.at(i)->value();
-//    }
-//    return sum;
-//}
-//
-//void polyDestroy ( std::vector<polynomial*>& pv )
-//{
-//    for (int i = 0; i < pv.size(); i++)
-//    {
-//        delete pv[i];
-//        std::cout << "poly destroyed" << std::endl;
-//    }
-//}

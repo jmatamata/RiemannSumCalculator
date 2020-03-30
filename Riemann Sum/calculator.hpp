@@ -21,9 +21,19 @@ class summation
     
     long double _base;
     
+    char sumChoiceBuffer[40];
+    
 public:
     
     void functionBase ();
     
+    void sumChoice ( functionReader& userFunction );
+    
     long double leftRiemannSum (functionReader& userFunction);
+    
+    long double rightRiemannSum ( functionReader& userFunction );
+    
+    long double midRiemannSum ( functionReader& userFunction );
+    
+    long double trapRiemannSum ( functionReader& userFunction );
 };

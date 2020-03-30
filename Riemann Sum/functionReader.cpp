@@ -9,8 +9,8 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <cmath>
 #include "functionReader.hpp"
-#include "polynomial.hpp"
 
 
 //MAIN READER
@@ -36,7 +36,7 @@ void functionReader::reader ()
         //Obtains the powers of the polynomials.
         if ( *index == '^' )
             {
-                //std::cout << this->powerFunctionCatcher(index) << std::endl;
+                //std::cout << "Power: " <<this->powerFunctionCatcher(index) << std::endl;
                 functionPowers.push_back(this->powerFunctionCatcher(index));
             }
         
@@ -44,7 +44,7 @@ void functionReader::reader ()
         //Obtains the multiples of the polynomials.
         if ( (*index == 'x' || *index == 'X' ) )
             {
-                //std::cout << this->multipleFunctionCatcher(index) << std::endl;
+                //std::cout << "Multiple: " <<this->multipleFunctionCatcher(index) << std::endl;
                 functionMultiples.push_back(this->multipleFunctionCatcher(index));
                 variableTerms++;
                 //std::cout << "Term: " << variableTerms << std::endl;
@@ -71,7 +71,7 @@ long double functionReader::multipleFunctionCatcher ( char* index )
     //Iterates through the charBuffer and pushes back any numbers that represent the multiples.
     for ( char* multiplePointer = index - 1; multiplePointer != bufferStart; --multiplePointer )
     {
-        if ( ('1' <= *multiplePointer && *multiplePointer <= '9') || *multiplePointer == '.' || *multiplePointer == '-')
+        if ( ('0' <= *multiplePointer && *multiplePointer <= '9') || *multiplePointer == '.' || *multiplePointer == '-' )
             {
                 temp.push_back(*multiplePointer);
             }
@@ -102,7 +102,7 @@ long double functionReader::multipleFunctionCatcher ( char* index )
 //---------------------------------------------------------------------------------------------------------------
 
 
-int functionReader::powerFunctionCatcher ( char* index )
+long double functionReader::powerFunctionCatcher ( char* index )
 {
         //Initializes a temporary vector to store the needed characters.
         std::vector<char> temp;
@@ -110,7 +110,7 @@ int functionReader::powerFunctionCatcher ( char* index )
         //Iterates through the charBuffer and pushes back any numbers that represent the power.
         for ( char* powerPointer = index + 1; powerPointer != bufferEnd; powerPointer++ )
         {
-            if ( '1' <= *powerPointer && *powerPointer <= '9' )
+            if ( ('0' <= *powerPointer && *powerPointer <= '9') || *powerPointer == '.' || *powerPointer == '-' )
                 {
                     temp.push_back(*powerPointer);
                     
@@ -121,9 +121,6 @@ int functionReader::powerFunctionCatcher ( char* index )
                 }
         }
         
-        //This reverses the temporary vector inorder to get the number in it's correct orientation.
-        std::reverse(temp.begin(), temp.end());
-        
         //This converts the char vector into a string
         std::string stringNumber (temp.begin(), temp.end());
     
@@ -131,7 +128,7 @@ int functionReader::powerFunctionCatcher ( char* index )
         stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
         
         //This converts the string into an int.
-        int number = std::stoi(stringNumber);
+        long double number = std::stold(stringNumber);
     
         //This returns the power number.
         return number;
@@ -186,7 +183,7 @@ long double functionReader::constantFunctionCatcher ()
         for ( char* index = functionBuffer + 40; index != bufferStart; --index )
         {
             
-            if ( ('1' <= *index && *index <= '9') || *index == '.' || *index == '-')
+            if ( ('0' <= *index && *index <= '9') || *index == '.' || *index == '-')
                 {
                     temp.push_back(*index);
                 }
@@ -224,7 +221,7 @@ long double functionReader::function ( const long double& variable )
             
             for ( int i = 0; i < variableTerms; i++)
                 {
-                    functionEvaluation += polynomial( functionMultiples[i], variable, functionPowers[i]).value();
+                    functionEvaluation += functionMultiples[i] * (pow(variable, functionPowers[i]));
                 }
             
             functionEvaluation += functionConstant;
@@ -247,16 +244,3 @@ int functionReader::getVariableTerms()
     return variableTerms;
 }
 
-
-//if ( std::stoi(stringNumber) == int(std::stoi(stringNumber)))
-//    {
-//        //This converts the string into an int.
-//        int number = std::stoi(stringNumber);
-//
-//        //This returns the power number.
-//        return number;
-//    }
-//else
-//    {
-//        throw 1;
-//    }
