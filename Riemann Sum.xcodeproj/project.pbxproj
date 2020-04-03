@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A4A662D242EFD1B006E8F75 /* calculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A4A662B242EFD1B006E8F75 /* calculator.cpp */; };
 		2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C02238D0EFE00C2ACF4 /* main.cpp */; };
-		2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2A864C0A238D180C00C2ACF4 /* polynomial.cpp */; };
 		2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D95023F8CD9800D36A65 /* functionReader.cpp */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +29,6 @@
 		2A4A662C242EFD1B006E8F75 /* calculator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = calculator.hpp; sourceTree = "<group>"; };
 		2A864BFF238D0EFE00C2ACF4 /* Riemann Sum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Riemann Sum"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A864C02238D0EFE00C2ACF4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		2A864C0A238D180C00C2ACF4 /* polynomial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = polynomial.cpp; sourceTree = "<group>"; };
-		2A864C0B238D180C00C2ACF4 /* polynomial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = polynomial.hpp; sourceTree = "<group>"; };
 		2AA6D95023F8CD9800D36A65 /* functionReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = functionReader.cpp; sourceTree = "<group>"; };
 		2AA6D95123F8CD9800D36A65 /* functionReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functionReader.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,8 +66,6 @@
 				2A864C02238D0EFE00C2ACF4 /* main.cpp */,
 				2AA6D95023F8CD9800D36A65 /* functionReader.cpp */,
 				2AA6D95123F8CD9800D36A65 /* functionReader.hpp */,
-				2A864C0A238D180C00C2ACF4 /* polynomial.cpp */,
-				2A864C0B238D180C00C2ACF4 /* polynomial.hpp */,
 				2A4A662B242EFD1B006E8F75 /* calculator.cpp */,
 				2A4A662C242EFD1B006E8F75 /* calculator.hpp */,
 			);
@@ -137,7 +132,6 @@
 				2AA6D95223F8CD9800D36A65 /* functionReader.cpp in Sources */,
 				2A4A662D242EFD1B006E8F75 /* calculator.cpp in Sources */,
 				2A864C03238D0EFE00C2ACF4 /* main.cpp in Sources */,
-				2A864C0C238D180C00C2ACF4 /* polynomial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -148,7 +148,7 @@ long double summation::trapRiemannSum ( functionReader& userFunction )
             
             else
                 {
-                    sum += 2 * (userFunction.function( _beginInterval + (i * _base) ));
+                    sum += 2 * (userFunction.function( _beginInterval + (i * _base)) );
                 }
             
         }
