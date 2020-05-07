@@ -216,23 +216,23 @@ long double functionReader::constantFunctionCatcher ()
 long double functionReader::function ( const long double& variable )
 {
     if ( int(functionMultiples.size()) == variableTerms && int(functionPowers.size()) == variableTerms)
+    {
+        long double functionEvaluation = 0;
+        
+        for ( int i = 0; i < variableTerms; i++)
         {
-            long double functionEvaluation = 0;
-            
-            for ( int i = 0; i < variableTerms; i++)
-                {
-                    functionEvaluation += functionMultiples[i] * (pow(variable, functionPowers[i]));
-                }
-            
-            functionEvaluation += functionConstant;
-            
-            return functionEvaluation;
+            functionEvaluation += functionMultiples[i] * (pow(variable, functionPowers[i]));
         }
+        
+        functionEvaluation += functionConstant;
+        
+        return functionEvaluation;
+    }
     else
-        {
-            std::cout << "Function Evaluation Failed" << std::endl;
-            return -1;
-        }
+    {
+        std::cout << "Function Evaluation Failed" << std::endl;
+        return -1;
+    }
 }
 
 

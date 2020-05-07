@@ -53,38 +53,38 @@ void summation::sumChoice ( functionReader& userFunction )
         std::cin >> userChoice;
 
         if ( userChoice == 'L' || userChoice == 'l' )
-            {
-                std::cout << "\n";
-                std::cout << "Left Riemann Sum result: " <<this->leftRiemannSum(userFunction) << std::endl;
-                std::cout << "\n";
-                choiceCondition = true;
-            }
+        {
+            std::cout << "\n";
+            std::cout << "Left Riemann Sum result: " <<this->leftRiemannSum(userFunction) << std::endl;
+            std::cout << "\n";
+            choiceCondition = true;
+        }
         else if ( userChoice == 'R' || userChoice == 'r' )
-            {
-                std::cout << "\n";
-                std::cout << "Right Riemann Sum result: " << this->rightRiemannSum(userFunction) << std::endl;
-                std::cout << "\n";
-                choiceCondition = true;
-            }
+        {
+            std::cout << "\n";
+            std::cout << "Right Riemann Sum result: " << this->rightRiemannSum(userFunction) << std::endl;
+            std::cout << "\n";
+            choiceCondition = true;
+        }
         else if ( userChoice == 'M' || userChoice == 'm' )
-            {
-                std::cout << "\n";
-                std::cout << "Midpoint Riemann Sum result: " << this->midRiemannSum(userFunction) << std::endl;
-                std::cout << "\n";
-                choiceCondition = true;
-            }
+        {
+            std::cout << "\n";
+            std::cout << "Midpoint Riemann Sum result: " << this->midRiemannSum(userFunction) << std::endl;
+            std::cout << "\n";
+            choiceCondition = true;
+        }
         else if ( userChoice == 'T' || userChoice == 't' )
-            {
-                std::cout << "\n";
-                std::cout << "Trapezoidal Riemann Sum result: " << this->trapRiemannSum(userFunction) << std::endl;
-                std::cout << "\n";
-                choiceCondition = true;
-            }
+        {
+            std::cout << "\n";
+            std::cout << "Trapezoidal Riemann Sum result: " << this->trapRiemannSum(userFunction) << std::endl;
+            std::cout << "\n";
+            choiceCondition = true;
+        }
         else
-            {
-                std::cout << "\n";
-                std::cout << "Invalid Choice. Try again: ";
-            }
+        {
+            std::cout << "\n";
+            std::cout << "Invalid Choice. Try again: ";
+        }
     }
 }
 
@@ -94,9 +94,9 @@ long double summation::leftRiemannSum ( functionReader& userFunction )
     long double sum = 0;
     
     for ( int i = 0; i < _nTerm; i++ )
-        {
-            sum += userFunction.function( _beginInterval + (i * _base) );
-        }
+    {
+        sum += userFunction.function( _beginInterval + (i * _base) );
+    }
     
     sum *= _base;
     
@@ -109,9 +109,9 @@ long double summation::rightRiemannSum ( functionReader& userFunction )
     long double sum = 0;
     
     for ( int i = 1; i <= _nTerm; i++ )
-        {
-            sum += userFunction.function( _beginInterval + (i * _base) );
-        }
+    {
+        sum += userFunction.function( _beginInterval + (i * _base) );
+    }
     
     sum *= _base;
     
@@ -124,9 +124,9 @@ long double summation::midRiemannSum ( functionReader& userFunction )
     long double sum = 0;
     
     for ( double i = 0.5; i <= _nTerm; i++ )
-        {
-            sum += userFunction.function( _beginInterval + ( i * _base ) );
-        }
+    {
+        sum += userFunction.function( _beginInterval + ( i * _base ) );
+    }
     
     sum *= _base;
     
@@ -140,18 +140,18 @@ long double summation::trapRiemannSum ( functionReader& userFunction )
     long double sum = 0;
     
     for ( int i = 0; i < _nTerm; i++ )
+    {
+        if ( i == 0 )
         {
-            if ( i == 0 )
-                {
-                    sum += userFunction.function( _beginInterval );
-                }
-            
-            else
-                {
-                    sum += 2 * (userFunction.function( _beginInterval + (i * _base)) );
-                }
-            
+            sum += userFunction.function( _beginInterval );
         }
+        
+        else
+        {
+            sum += 2 * (userFunction.function( _beginInterval + (i * _base)) );
+        }
+        
+    }
     
     sum *= (_base / 2);
     

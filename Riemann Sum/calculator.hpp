@@ -29,7 +29,7 @@ public:
     
     void sumChoice ( functionReader& userFunction );
     
-    long double leftRiemannSum (functionReader& userFunction);
+    long double leftRiemannSum (functionReader& userFunction );
     
     long double rightRiemannSum ( functionReader& userFunction );
     
