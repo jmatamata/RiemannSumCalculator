@@ -91,7 +91,7 @@ float functionReader::multipleFunctionCatcher ( char* index )
     stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
     
     //This converts the string into a float.
-    float number = std::stold(stringNumber);
+    float number = std::stof(stringNumber);
     
     //This returns the multiple number.
     return number;
@@ -128,7 +128,7 @@ float functionReader::powerFunctionCatcher ( char* index )
         stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
         
         //This converts the string into an int.
-        float number = std::stold(stringNumber);
+        float number = std::stof(stringNumber);
     
         //This returns the power number.
         return number;
@@ -204,7 +204,7 @@ float functionReader::constantFunctionCatcher ()
         stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
         
         //This converts the string into a float.
-        number = std::stold(stringNumber);
+        number = std::stof(stringNumber);
     }
     
     return number;
