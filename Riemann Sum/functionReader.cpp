@@ -62,7 +62,7 @@ void functionReader::reader ()
 //---------------------------------------------------------------------------------------------------------------
 
 
-long double functionReader::multipleFunctionCatcher ( char* index )
+float functionReader::multipleFunctionCatcher ( char* index )
 {
     //Initializes a temporary vector to store the needed characters.
     std::vector<char> temp;
@@ -87,11 +87,11 @@ long double functionReader::multipleFunctionCatcher ( char* index )
     //This converts the char vector into a string
     std::string stringNumber (temp.begin(), temp.end());
     
-    //This erases any possible blank space from the string before being converted into a long double.
+    //This erases any possible blank space from the string before being converted into a float.
     stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
     
-    //This converts the string into a long double.
-    long double number = std::stold(stringNumber);
+    //This converts the string into a float.
+    float number = std::stold(stringNumber);
     
     //This returns the multiple number.
     return number;
@@ -102,7 +102,7 @@ long double functionReader::multipleFunctionCatcher ( char* index )
 //---------------------------------------------------------------------------------------------------------------
 
 
-long double functionReader::powerFunctionCatcher ( char* index )
+float functionReader::powerFunctionCatcher ( char* index )
 {
         //Initializes a temporary vector to store the needed characters.
         std::vector<char> temp;
@@ -128,7 +128,7 @@ long double functionReader::powerFunctionCatcher ( char* index )
         stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
         
         //This converts the string into an int.
-        long double number = std::stold(stringNumber);
+        float number = std::stold(stringNumber);
     
         //This returns the power number.
         return number;
@@ -169,9 +169,9 @@ bool functionReader::constantChecker ()
 
 
 
-long double functionReader::constantFunctionCatcher ()
+float functionReader::constantFunctionCatcher ()
 {
-    long double number = 0;
+    float number = 0;
     
     //Checks whether the code should run using constChecker function.
     if (this->constantChecker())
@@ -200,10 +200,10 @@ long double functionReader::constantFunctionCatcher ()
         //This converts the char vector into a string
         std::string stringNumber (temp.begin(), temp.end());
         
-        //This erases any possible blank space from the string before being converted into a long double.
+        //This erases any possible blank space from the string before being converted into a float.
         stringNumber.erase(std::remove(stringNumber.begin(), stringNumber.end(),' '), stringNumber.end());
         
-        //This converts the string into a long double.
+        //This converts the string into a float.
         number = std::stold(stringNumber);
     }
     
@@ -213,11 +213,11 @@ long double functionReader::constantFunctionCatcher ()
 //FOR FUNCTION BUILDER
 //---------------------------------------------------------------------------------------------------------------
 
-long double functionReader::function ( const long double& variable )
+float functionReader::function ( const float& variable )
 {
     if ( int(functionMultiples.size()) == variableTerms && int(functionPowers.size()) == variableTerms)
     {
-        long double functionEvaluation = 0;
+        float functionEvaluation = 0;
         
         for ( int i = 0; i < variableTerms; i++)
         {

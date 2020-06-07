@@ -23,32 +23,32 @@ class functionReader
     int variableTerms = 0;
     
     //This vector stores all the multiples from the function.
-    std::vector<long double> functionMultiples;
+    std::vector<float> functionMultiples;
     
     //This vector stores all the powers from the function.
-    std::vector<long double> functionPowers;
+    std::vector<float> functionPowers;
     
     //This is the constant of the function.
-    long double functionConstant = 0;
+    float functionConstant = 0;
     
 public:
     
     void reader ();
     
     //This function catches all the multiples in the user inputted function. All numbers after 'x' symbol.
-    long double multipleFunctionCatcher ( char* index );
+    float multipleFunctionCatcher ( char* index );
     
     //This function catches all the power numbers that are after the '^' symbol.
-    long double powerFunctionCatcher ( char* index );
+    float powerFunctionCatcher ( char* index );
     
     //This function catches the constant at the end of the user defined function.
-    long double constantFunctionCatcher ();
+    float constantFunctionCatcher ();
     
     //This checks to see if the constFunctionCatcher should be called or not.
     bool constantChecker ();
     
     //This evaluates the function using an inputed variable.
-    long double function ( const long double& variable );
+    float function ( const float& variable );
     
     int getVariableTerms();
 };

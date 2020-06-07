@@ -13,13 +13,13 @@
 class summation
 {
     
-    double _beginInterval;
+    float _beginInterval;
     
-    double _endInterval;
+    float _endInterval;
     
     int _nTerm;
     
-    long double _base;
+    float _base;
     
     char sumChoiceBuffer[40];
     
@@ -29,11 +29,11 @@ public:
     
     void sumChoice ( functionReader& userFunction );
     
-    long double leftRiemannSum (functionReader& userFunction );
+    float leftRiemannSum (functionReader& userFunction );
     
-    long double rightRiemannSum ( functionReader& userFunction );
+    float rightRiemannSum ( functionReader& userFunction );
     
-    long double midRiemannSum ( functionReader& userFunction );
+    float midRiemannSum ( functionReader& userFunction );
     
-    long double trapRiemannSum ( functionReader& userFunction );
+    float trapRiemannSum ( functionReader& userFunction );
 };

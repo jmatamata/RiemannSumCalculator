@@ -89,9 +89,9 @@ void summation::sumChoice ( functionReader& userFunction )
 }
 
 
-long double summation::leftRiemannSum ( functionReader& userFunction )
+float summation::leftRiemannSum ( functionReader& userFunction )
 {
-    long double sum = 0;
+    float sum = 0;
     
     for ( int i = 0; i < _nTerm; i++ )
     {
@@ -104,9 +104,9 @@ long double summation::leftRiemannSum ( functionReader& userFunction )
 }
 
 
-long double summation::rightRiemannSum ( functionReader& userFunction )
+float summation::rightRiemannSum ( functionReader& userFunction )
 {
-    long double sum = 0;
+    float sum = 0;
     
     for ( int i = 1; i <= _nTerm; i++ )
     {
@@ -119,11 +119,11 @@ long double summation::rightRiemannSum ( functionReader& userFunction )
 }
 
 
-long double summation::midRiemannSum ( functionReader& userFunction )
+float summation::midRiemannSum ( functionReader& userFunction )
 {
-    long double sum = 0;
+    float sum = 0;
     
-    for ( double i = 0.5; i <= _nTerm; i++ )
+    for ( float i = 0.5; i <= _nTerm; i++ )
     {
         sum += userFunction.function( _beginInterval + ( i * _base ) );
     }
@@ -135,9 +135,9 @@ long double summation::midRiemannSum ( functionReader& userFunction )
 
 
 
-long double summation::trapRiemannSum ( functionReader& userFunction )
+float summation::trapRiemannSum ( functionReader& userFunction )
 {
-    long double sum = 0;
+    float sum = 0;
     
     for ( int i = 0; i < _nTerm; i++ )
     {
